@@ -1,0 +1,15 @@
+.DS_Store
+/graphs/
+/cnf/
+**/*.rs.bk
+*.out
+
+.idea
+.idea/*.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/workspace.xml
+.idea/dictionaries/
+.idea/*
+.idea/**
+.idea/**.*
