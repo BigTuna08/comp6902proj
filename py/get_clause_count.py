@@ -22,6 +22,3 @@ def get_clause_count(n, k, m_g, m_h):
     print(get_type3_clause_count(n, k, m_g, m_h), "type 3")
     print("\n counted ")
     return get_type1_clause_count(k) + get_type2_clause_count(n,k) + get_type3_clause_count(n, k, m_g, m_h)
-
-
-
