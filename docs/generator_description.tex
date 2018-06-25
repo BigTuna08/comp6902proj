@@ -1,0 +1,145 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Generator Description}
+\author{Kyle Nickerson & Tian Wang & Arshad Arafat  }
+% \date{June 2018}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem Description}
+
+% \noindent
+% \underline{Problem}: $ K\_COMMON\_SUB = $ $ \{ <G, H, k> \mid G $ and $H $ 
+% have a common induced subgraph which contains at least $ k $ nodes \}. 
+% \\
+
+\noindent
+\underline{Instance}: Two undirected graphs $G$ and $H$ and a natural number $k$.
+\\
+\underline{Accept if}: $G$ and $H$ have a common induced subgraph containing at least $k$ nodes
+
+% \section{Overview}
+
+% Because instances of our problem require two input graphs, generating instances of the problem will involve two parts. First, we will have a graph generator which will be used to generate a set of random graphs. Then we will produce instances of our problem  
+
+% Our generator will consist of two parts, first the graph generator which generates random graphs, and second the 
+
+\section{Model}
+This section describes the model we will for generating the random graphs for our instances.
+Our graph generator will use a preferential attachment model - similar to the Barabási–Albert (BA) Model [1] - for generating random graphs. The original BA model describes how linear preferential attachment can produce graphs with power law degree distributions. The model used in our generator is a more general version of the BA model, which allows for sub-linear and super-linear preferential attachment [2]. The strength of the preferential attachment is an input parameter to our generator. This will allow us to explore how different types of preferential attachment influence the development of common subgraph structures. 
+
+\section{Parameters}
+Our graph generator will take 4 parameters: $m_0, m, n, $ and $ \alpha $, explained below. 
+An instance of our problem $<G,H,k>$ can be described with the following parameters. 
+
+\begin{itemize}
+  \item $m_{0G}$ is the initial number of nodes in $G$.  
+  \item $m_{G} $ is the number of edges added with each additional node in $G$.
+  \item $n_G $ is the total number of nodes in $G$.
+  \item $\alpha_G$ is a parameter indicating the strength of preferential attachment for $G$.
+  \item $m_{0H}$ is the initial number of nodes in $H$.  
+  \item $m_{H} $ is the number of edges added with each additional node in $H$.
+  \item $n_H $ is the total number of nodes in $H$.
+  \item $\alpha_H$ is a parameter indicating the strength of preferential attachment for $H$.
+  \item $k$ is the size of common subgraph we are looking for between $G$ and $H$
+\end{itemize}
+
+% \section{new night}
+
+
+% \begin{itemize}
+%   \item $n_G = n_H = 50$ 
+%   \item $m_{0G} = m_{G} = \{1,2,..10\}$
+%   \item $\alpha_G = \{0.0, 0.5, ..., 2.5\}$
+%   \item $m_{0H} = m_{H} = \{1,2,..10\}$
+%   \item $\alpha_H = \{0.0, 0.5, ..., 2.5\}$
+%   \item $k = \{4, 5 ..  ?\}$
+% \end{itemize}
+
+\section{Planned parameter regime}
+
+\subsection{Motivation}
+We are most interested in examining how both the density of edges, and the strength of preferential attachment, impact the size of the largest common induced subgraph between two networks. Because of this, we are most interested studying the variation of the parameters $k, m_G, \alpha_G, m_H$ and $\alpha_H$. In order to simplify the number of different conditions in the experiment, we are only planning on creating instances where $G$ and $H$ have the same number of nodes ($n_G = n_H$). Another simplification to parameters we will use, is to always set $m_{G0}=m_G$ and $m_{H0} = m_H$, which is commonly used with the BA model [1,2]. 
+
+\subsection{Planned Values}
+
+\begin{itemize}
+  \item $n_G = n_H = 50$ 
+  \item $m_{0G} = m_{G}, m_{0H} = m_{H}, = \{1,2,..10\}$ 
+  \item $\alpha_G, \alpha_H = \{0.0, 0.5, ..., 2.0\}$ Changes to alpha affect the shape of the degree distribution produced.
+  \item $k = \{3, 4, 5 ..  ?\}$. We plan on determining the max value for k experimentally, because we do not know how big the common subgraphs will be on average. By increasing it from small to large, we can insure we have both yes and no instances of our problem.
+\end{itemize}
+
+% \subsection{Reduced Parameters}
+% \begin{itemize}
+%   \item $n$ is the total number of nodes in both $G$ and $H$.
+%   \item $m_{G} $ is the number of edges added with each additional node in $G$ (also initial nodes in $G$).
+%   \item $\alpha_G$ is a parameter indicating the strength of preferential attachment for $G$.
+%   \item $m_{H} $ is the number of edges added with each additional node in $H$ (also initial nodes in $H$).
+%   \item $\alpha_H$ is a parameter indicating the strength of preferential attachment for $H$.
+%   \item $k$ is the size of common subgraph we are looking for between $G$ and $H$
+% \end{itemize}
+
+% Because we have so many parameters besides the graph size $n$, which are interested in, we plan on doing some preliminary tests to find a value for $n$ which will allow the solvers to run in a reasonable time. Once we have found a suitable value for $n$, we will then extensively vary the parameters for preferential attachment strength, edge density, and subgraph size. 
+
+\subsection{Experiment Setup}
+We plan on first creating a set of graphs using the graph generator, using all combinations of the $m$ and $\alpha$ parameters (likely multiple graphs for each combination of values). Then to create instances of our problem, we will consider all pairs of graphs in the set, and for each pair of graphs, we will consider multiple $k$ values. This will let us observe how looking for larger graphs effect the execution time of the SAT solver, an its ability to find satisfying assignments.   
+
+\subsection{Justification of Values}
+
+We choose to fix the number of nodes in the graphs as 50, because we have many other parameters we are more interested in exploring. The number of variables produced by our reduction, in terms of the above parameters, there will be  $ 2 \cdot k \cdot (n_G + n_H) = 100 \cdot k$ variables in the CNF formula. This will give us a range of around 300 variables for our smallest instances, and depending on how large k gets, likely over 1000 variables for the largest. If we find this $n$ value is to large for the solver, we will experiment will smaller values. 
+
+The $m$ values we chosen to be in a similar range to those observed in real world networks [3]. Also as $m$ increases, so will the number of clauses in our CNF formula. This will ensure we produce SAT instances with a wide range in the number of clauses. 
+
+The $\alpha $ values where chosen so that graphs with different network structures will be produced. The $\alpha$ values we have chosen will produce networks with the following topologies [2]:
+\begin{itemize}
+  \item $0.0$ - random
+  \item $0.5$ - random (weak preferential attachment)
+  \item $1.0$ - scale-free
+  \item $1.5$ - hub-and-spoke (multiple winners take all)
+  \item $2.0$ - hub-and-spoke (one or multiple winners take all)
+\end{itemize}
+
+% The parameter which will likely have the biggest impact on the size of the largest subgraph is $\alpha$, which will impact the degree distribution of the random graphs. We are planning on using the following values $0.0, 0.5, 1.0, 1.5, 2.0, 2.5$. The result of these values is as follows [from 2]
+
+% \subsection{Reduced Parameters}
+% \begin{itemize}
+%   \item $0.0$ - produces no preferential attachment, and a random network shape
+%   \item $0.5$ - produces sub-linear (weak) preferential attachment, and a random network shape
+%   \item $1.0$ - produces linear preferential attachment, and a scale-free network shape
+%   \item
+% \end{itemize}
+
+\section{References}
+[1] - Barabási, Albert-László & Albert, Réka (October 1999). "Emergence of scaling in random networks" (PDF). Science. 286 (5439): 509–512.
+
+\noindent
+[2] - Barabási, Albert-László. "Network Science." Retrieved from http://networksciencebook.com.
+
+\noindent
+[3] - Newman, M. E. J. Networks : An Introduction. Oxford ; Toronto: Oxford UP, 2010.
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
