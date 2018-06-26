@@ -60,6 +60,24 @@ class CNFVarManager:
                     print(v[0], v[1], v[2], file=f)
 
 
+    def interpret_assignment(self, sa):
+        g_verts = [None]*self.k
+        h_verts = [None]*self.k
+
+        for val in sa.assignment:
+            if val > 0:
+                var = self.vars[val]
+                if var.graph_name == "g":
+                    g_verts[var.subgraph_i] = var.node_i
+                elif var.graph_name == "h":
+                    h_verts[var.subgraph_i] = var.node_i
+                else:
+                    raise "graphname should be either g or h, not: " + var.graph_name
+
+        return g_verts, h_verts
+
+
+
 
 def load_manger(f_name):
     mnger = CNFVarManager([], [], 0)

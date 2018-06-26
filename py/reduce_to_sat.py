@@ -3,6 +3,7 @@ from CNFVarManager import CNFVarManager
 from get_clause_count import get_clause_count
 from graph_tools import load_graph_and_info
 
+
 ###          clause making methods    ###
 
 def add_type1_clauses(var_mnger, out):
@@ -78,40 +79,43 @@ def add_type3_clauses(g, h, var_mnger, out):
 ###          Run File    ###
 
 
-# 'g_file: number of initial nodes\n'
-# 'h_file: average number of edges\n'
+# 'g_file_name: number of input file used as input graph G (file in ../graphs)\n'
+# 'h_file: number of input file used as input graph H (file in ../graphs)\n'
 # 'k: total nodes\n'
-# 'out_file: name of output file in graphs directory')
+# 'out_file: name of output file in ../cnf (no extension)')
 def parse_args(args):
     return args[1], args[2], int(args[3]), args[4]
 
-def reduce_to_sat(g, h, k, computed_clause_count, out, recover_file):
-    mnger = CNFVarManager(g, h, k)
-    print("p cnf", mnger.n_vars(), int(computed_clause_count), file=out)
 
-    clause_count = 0
-    clause_count += add_type1_clauses(mnger, out)
-    clause_count += add_type2_clauses(mnger, out)
-    clause_count += add_type3_clauses(g, h, mnger, out)
 
-    mnger.write_to_file(recover_file)
 
-    assert clause_count == computed_clause_count, "Badness! " + str(clause_count) + " != " + str(computed_clause_count)
+def reduce_to_sat(g_id, h_id, k, out_file):
+    g, _, m_g, n_g, _ = load_graph_and_info("graphs/" + g_id)
+    h, _, m_h, n_h, _ = load_graph_and_info("graphs/" + h_id)
+
+    with open("cnf/" + out_file + ".cnf", "w") as out:
+        computed_clause_count = get_clause_count(n_g, k, m_g, m_h)
+        mnger = CNFVarManager(g, h, k)
+        print("p cnf", mnger.n_vars(), int(computed_clause_count), file=out)
+
+        clause_count = 0
+        clause_count += add_type1_clauses(mnger, out)
+        clause_count += add_type2_clauses(mnger, out)
+        clause_count += add_type3_clauses(g, h, mnger, out)
+
+        mnger.write_to_file("cnf/recover/" + out_file)
+
+        assert clause_count == computed_clause_count, "Badness! " + str(clause_count) + " != " + str(
+            computed_clause_count)
 
 
 if __name__ == '__main__':
     if len(sys.argv) > 4:
         g_file, h_file, k, out_file = parse_args(sys.argv)
-        g, _, m_g, n_g, _ = load_graph_and_info("graphs/" + g_file)
-        h, _, m_h, n_h, _ = load_graph_and_info("graphs/" + h_file)
-
-        with open("cnf/" + out_file + ".cnf", "w") as f:
-            computed_clause_count = get_clause_count(n_g, k, m_g, m_h)
-            reduce_to_sat(g,h,k,computed_clause_count,f, "cnf/recover/" + out_file + ".out")
-
+        reduce_to_sat(g_file, h_file, k, out_file)
     else:
-        print('Requires 3 arguments: g_file, h_file, k\n'
-              'g_file: number of initial nodes\n'
-              'h_file: average number of edges\n'
+        print('Requires 4 arguments: g_file, h_file, k and out_file\n'
+              'g_file_name: number of input file used as input graph G (file in ../graphs)\n'
+              'h_file: number of input file used as input graph H (file in ../graphs)\n'
               'k: total nodes\n'
-              'out_file: name of output file in graphs directory')
+              'out_file: name of output file in ../cnf (no extension)')

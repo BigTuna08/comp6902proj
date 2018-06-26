@@ -1,3 +1,5 @@
+from sys import stdout
+
 def count_edges(g_file):
     g = load_graph_and_info(g_file)
     print(g)
@@ -26,10 +28,12 @@ def get_graph_info(file_name):
 ###          Graph printing methods    ###
 
 # print graph as edge list
-def print_el(g):
+def print_el(g, out=stdout):
+    print("source\ttarget", file=out)
     for i in range(len(g)):
         for j in g[i]:
-            print("{}\t{}".format( i, j))
+            if i > j: # only print each edge once
+                print("{}\t{}".format( i, j), file=out)
 
 
 # print graph as adjacency matrix
@@ -46,3 +50,11 @@ def print_adj_matrix(g):
 def print_g(g):
     for i in range(len(g)):
         print(i, g[i])
+
+# # print graph as edge list
+# def print_el(g, out=stdout):
+#     print("source\ttarget", file=out)
+#     for i in range(len(g)):
+#         for j in range(i + 1, len(g)):
+#             if g[i][j]:
+#                 print("{}\t{}".format(i, j), file=out)

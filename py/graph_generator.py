@@ -1,10 +1,11 @@
 import sys
 import random
-from graph_tools import print_adj_matrix
+from graph_tools import print_el
 
 ###          Graph creation methods    ###
 
 def build_graph(m0, m, n, alpha):
+    print("building graph with..", m0, m, n, alpha)
     #make empty graph
     g = []
     for i in range(n):
@@ -43,7 +44,9 @@ def choose_attach_targets(node_i, m, alpha, g):
                 break
 
     if len(targets) != m:
-        print("m=", m, "n_i=", node_i, "targets=", targets)
+        print("\n\n\nm=", m, "n_i=", node_i, "targets=", targets)
+        print(g)
+        print("\n\n")
         raise "Error picking random edges, no target selected" # should never be here
 
     return targets
@@ -67,6 +70,12 @@ def add_undir_edge(n1, n2, g):
     g[n2].add(n1)
 
 
+def make_graph(m0, m, n, alpha, out_file):
+    g = build_graph(m, m0, n, alpha)
+    write_graph(g, "graphs/" + out_file, m, m0, n, alpha)
+    with open("graphs/edge_list/" + out_file, "w") as f:
+        print_el(g, f)
+
 
 ###          Run file          ###
 
@@ -82,22 +91,18 @@ def parse_args(args):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) > 4:
+    if len(sys.argv) > 5:
         m, m0, n, alpha = parse_args(sys.argv)
         g = build_graph(m, m0, n, alpha)
+        write_graph(g, "graphs/" + sys.argv[5], m, m0, n, alpha)
 
-        if len(sys.argv) > 5:
-            write_graph(g, "graphs/" + sys.argv[5], m, m0, n, alpha)
-        else:
-            # print_el(g)
-            # print_g(g)
-            print_adj_matrix(g)
     else:
-        print('Requires 4 arguments: m0, m, n, alpha\n'
+        print('Requires 5 arguments: m0, m, n, alpha\n'
               'm0: number of initial nodes\n'
               'm: average number of edges,'
               'n: total nodes\n'
               'alpha: preferential attachment strength\n'
               '\t < 1: sub-linear\n'
               '\t 1: linear (scale free model)\n'
-              '\t > 1: super-linear attachment')
+              '\t > 1: super-linear attachment'
+              'graph_id: used for filename in ../graphs directory')

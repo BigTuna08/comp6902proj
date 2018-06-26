@@ -4,9 +4,15 @@ Assumes
 - m0 = m was used when creating graphs
 '''
 
-def get_type3_clause_count(n, k, m_g, m_h):
-    m_g = m_g + n*m_g - m_g **2 # total edges in g (assuming m0 = m)
-    m_h = m_h + n*m_h - m_h **2 # total edges in h (assuming m0 = m)
+def get_type3_clause_count(n, k, m_g_gen, m_h_gen):
+    m_g = m_g_gen + n*m_g_gen - m_g_gen **2 # total edges in g (assuming m0 = m)
+    m_h = m_h_gen + n*m_h_gen - m_h_gen **2 # total edges in h (assuming m0 = m)
+
+    if m_g_gen < 3: # no inital cycle
+        m_g -= 1
+    if m_h_gen < 3:
+        m_h -= 1
+
     return k*(k-1)/2*( n*(n-1)/2*(m_g + m_h) - 2*m_g*m_h )
 
 def get_type2_clause_count(n, k):

@@ -1,0 +1,189 @@
+/home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/MultiSolvers.o /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/MultiSolvers.or /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/MultiSolvers.od /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/MultiSolvers.op: \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/MultiSolvers.cc \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../parallel/MultiSolvers.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../parallel/ParallelSolver.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../core/SolverTypes.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/IntTypes.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Alg.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Vec.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/XAlloc.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Map.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Alloc.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../core/Solver.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Heap.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../utils/Options.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../utils/ParseUtils.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../core/BoundedQueue.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../core/Constants.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Clone.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../core/SolverStats.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../simp/SimpSolver.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Queue.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../parallel/SharedCompanion.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../parallel/SolverCompanion.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../parallel/ClausesBuffer.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Sort.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../utils/System.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../parallel/SolverConfiguration.h
+/home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/SharedCompanion.o /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/SharedCompanion.or /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/SharedCompanion.od /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/SharedCompanion.op: \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/SharedCompanion.cc \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../core/Solver.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Heap.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Vec.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/IntTypes.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/XAlloc.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Alg.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../utils/Options.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../utils/ParseUtils.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../core/SolverTypes.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Map.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Alloc.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../core/BoundedQueue.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../core/Constants.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Clone.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../core/SolverStats.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../parallel/ParallelSolver.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../simp/SimpSolver.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Queue.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../parallel/SharedCompanion.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../parallel/SolverCompanion.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../parallel/ClausesBuffer.h
+/home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/ClausesBuffer.o /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/ClausesBuffer.or /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/ClausesBuffer.od /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/ClausesBuffer.op: \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/ClausesBuffer.cc \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../parallel/ClausesBuffer.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Vec.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/IntTypes.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/XAlloc.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../core/SolverTypes.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Alg.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Map.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Alloc.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../core/Solver.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Heap.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../utils/Options.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../utils/ParseUtils.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../core/BoundedQueue.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../core/Constants.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Clone.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../core/SolverStats.h
+/home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/ParallelSolver.o /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/ParallelSolver.or /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/ParallelSolver.od /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/ParallelSolver.op: \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/ParallelSolver.cc \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../parallel/ParallelSolver.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../core/SolverTypes.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/IntTypes.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Alg.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Vec.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/XAlloc.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Map.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Alloc.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../core/Solver.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Heap.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../utils/Options.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../utils/ParseUtils.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../core/BoundedQueue.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../core/Constants.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Clone.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../core/SolverStats.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../simp/SimpSolver.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Queue.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../parallel/SharedCompanion.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../parallel/SolverCompanion.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../parallel/ClausesBuffer.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Sort.h
+/home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/SolverCompanion.o /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/SolverCompanion.or /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/SolverCompanion.od /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/SolverCompanion.op: \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/SolverCompanion.cc \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../parallel/SolverCompanion.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Vec.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/IntTypes.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/XAlloc.h
+/home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/SolverConfiguration.o /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/SolverConfiguration.or /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/SolverConfiguration.od /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/SolverConfiguration.op: \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/SolverConfiguration.cc \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../parallel/MultiSolvers.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../parallel/ParallelSolver.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../core/SolverTypes.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/IntTypes.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Alg.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Vec.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/XAlloc.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Map.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Alloc.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../core/Solver.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Heap.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../utils/Options.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../utils/ParseUtils.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../core/BoundedQueue.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../core/Constants.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Clone.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../core/SolverStats.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../simp/SimpSolver.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Queue.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../parallel/SharedCompanion.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../parallel/SolverCompanion.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../parallel/ClausesBuffer.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../parallel/SolverConfiguration.h
+/home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/Main.o /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/Main.or /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/Main.od /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/Main.op: \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/Main.cc \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../utils/System.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/IntTypes.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../utils/ParseUtils.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../utils/Options.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Vec.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/XAlloc.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../core/Dimacs.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../core/SolverTypes.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Alg.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Map.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Alloc.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../simp/SimpSolver.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Queue.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../core/Solver.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Heap.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../core/BoundedQueue.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../core/Constants.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../mtl/Clone.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../core/SolverStats.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../parallel/ParallelSolver.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../parallel/SharedCompanion.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../parallel/SolverCompanion.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../parallel/ClausesBuffer.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/syrup/syrup/parallel/../parallel/MultiSolvers.h
+/Users/audemard/Sat/Src/syrup/simp/Main.o /Users/audemard/Sat/Src/syrup/simp/Main.or /Users/audemard/Sat/Src/syrup/simp/Main.od /Users/audemard/Sat/Src/syrup/simp/Main.op: /Users/audemard/Sat/Src/syrup/simp/Main.cc \
+  /Users/audemard/Sat/Src/syrup/simp/../utils/System.h \
+  /Users/audemard/Sat/Src/syrup/simp/../mtl/IntTypes.h \
+  /Users/audemard/Sat/Src/syrup/simp/../utils/ParseUtils.h \
+  /Users/audemard/Sat/Src/syrup/simp/../utils/Options.h \
+  /Users/audemard/Sat/Src/syrup/simp/../mtl/Vec.h \
+  /Users/audemard/Sat/Src/syrup/simp/../mtl/XAlloc.h \
+  /Users/audemard/Sat/Src/syrup/simp/../core/Dimacs.h \
+  /Users/audemard/Sat/Src/syrup/simp/../core/SolverTypes.h \
+  /Users/audemard/Sat/Src/syrup/simp/../mtl/Alg.h \
+  /Users/audemard/Sat/Src/syrup/simp/../mtl/Map.h \
+  /Users/audemard/Sat/Src/syrup/simp/../mtl/Alloc.h \
+  /Users/audemard/Sat/Src/syrup/simp/../simp/SimpSolver.h \
+  /Users/audemard/Sat/Src/syrup/simp/../mtl/Queue.h \
+  /Users/audemard/Sat/Src/syrup/simp/../core/Solver.h \
+  /Users/audemard/Sat/Src/syrup/simp/../mtl/Heap.h \
+  /Users/audemard/Sat/Src/syrup/simp/../core/BoundedQueue.h \
+  /Users/audemard/Sat/Src/syrup/simp/../core/Constants.h \
+  /Users/audemard/Sat/Src/syrup/simp/../mtl/Clone.h \
+  /Users/audemard/Sat/Src/syrup/simp/../core/SolverStats.h
+/Users/audemard/Sat/Src/syrup/simp/SimpSolver.o /Users/audemard/Sat/Src/syrup/simp/SimpSolver.or /Users/audemard/Sat/Src/syrup/simp/SimpSolver.od /Users/audemard/Sat/Src/syrup/simp/SimpSolver.op: /Users/audemard/Sat/Src/syrup/simp/SimpSolver.cc \
+  /Users/audemard/Sat/Src/syrup/simp/../mtl/Sort.h \
+  /Users/audemard/Sat/Src/syrup/simp/../mtl/Vec.h \
+  /Users/audemard/Sat/Src/syrup/simp/../mtl/IntTypes.h \
+  /Users/audemard/Sat/Src/syrup/simp/../mtl/XAlloc.h \
+  /Users/audemard/Sat/Src/syrup/simp/../simp/SimpSolver.h \
+  /Users/audemard/Sat/Src/syrup/simp/../mtl/Queue.h \
+  /Users/audemard/Sat/Src/syrup/simp/../core/Solver.h \
+  /Users/audemard/Sat/Src/syrup/simp/../mtl/Heap.h \
+  /Users/audemard/Sat/Src/syrup/simp/../mtl/Alg.h \
+  /Users/audemard/Sat/Src/syrup/simp/../utils/Options.h \
+  /Users/audemard/Sat/Src/syrup/simp/../utils/ParseUtils.h \
+  /Users/audemard/Sat/Src/syrup/simp/../core/SolverTypes.h \
+  /Users/audemard/Sat/Src/syrup/simp/../mtl/Map.h \
+  /Users/audemard/Sat/Src/syrup/simp/../mtl/Alloc.h \
+  /Users/audemard/Sat/Src/syrup/simp/../core/BoundedQueue.h \
+  /Users/audemard/Sat/Src/syrup/simp/../core/Constants.h \
+  /Users/audemard/Sat/Src/syrup/simp/../mtl/Clone.h \
+  /Users/audemard/Sat/Src/syrup/simp/../core/SolverStats.h \
+  /Users/audemard/Sat/Src/syrup/simp/../utils/System.h
