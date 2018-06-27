@@ -4,6 +4,8 @@ from graph_tools import load_graph_and_info
 from reduce_to_sat import line_prepender
 # import scipy.io as sio
 
+
+
 # Still not fully tested
 class IndManger:
     def __init__(self, n_g, n_h):

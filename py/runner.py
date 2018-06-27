@@ -8,10 +8,10 @@ from reduce_to_clique import reduce_to_clique
 # n_values = [15]
 # k_values = [5, 13]
 
-m_values = [1,2]
+m_values = [1,2,4]
 alpha_values = [0.5, 1.0, 1.5]
-n_values = [6]
-k_values = [4,5]
+n_values = [6, 7, 8, 9, 10, 11, 12]
+k_values = [5,6,7,8]
 
 
 if __name__ == '__main__':
