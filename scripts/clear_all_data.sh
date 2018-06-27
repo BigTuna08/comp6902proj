@@ -18,4 +18,5 @@ mkdir graphs/clique_sol
 
 rm -r cliques
 mkdir cliques
+mkdir cliques/results
 
