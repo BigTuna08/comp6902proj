@@ -2,7 +2,7 @@
 /graphs/
 /cnf/
 /cliques/
-/clique_solver/pmc-master/
+/clique_solver/
 **/*.rs.bk
 *.out
 
