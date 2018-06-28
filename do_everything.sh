@@ -8,4 +8,6 @@ wait
 wait
 python3 py/recover_from_assignment.py cnf/assignments
 wait
+python3 py/recover_from_clique.py cliques/results
+wait
 echo Done

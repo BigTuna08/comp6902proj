@@ -1,7 +1,7 @@
 import sys
-from CNFVarManager import CNFVarManager
+from SatManager import CNFVarManager
 from get_clause_count import get_clause_count
-from graph_tools import load_graph_and_info
+from graph_tools import load_graph_and_info, line_prepender
 
 
 ###          clause making methods    ###
@@ -134,11 +134,7 @@ if __name__ == '__main__':
 
 
 
-def line_prepender(filename, line):
-    with open(filename, 'r+') as f:
-        content = f.read()
-        f.seek(0, 0)
-        f.write(line.rstrip('\r\n') + '\n' + content)
+
 
 #
 # ###          clause making methods    ###

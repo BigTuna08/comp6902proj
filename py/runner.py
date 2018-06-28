@@ -1,17 +1,17 @@
 from graph_generator import make_graph
 from reduce_to_sat import reduce_to_sat
-from reduce_to_clique import reduce_to_clique
-
-
-# m_values = [1,2,4]
-# alpha_values = [0.5, 2.0]
-# n_values = [15]
-# k_values = [5, 13]
+from reduce_to_clique import reduce_to_clique, reduce_to_clique_fast
+from time import time
 
 m_values = [1,2,4]
-alpha_values = [0.5, 1.0, 1.5]
-n_values = [6, 7, 8, 9, 10, 11, 12]
-k_values = [5,6,7,8]
+alpha_values = [0.5, 2.0]
+n_values = [7,8]
+k_values = [4,5]
+
+# m_values = [1,2,4]
+# alpha_values = [0.5, 1.0, 1.5]
+# n_values = [25, 30, 35, 40]
+# k_values = [20, 25, 30]
 
 
 if __name__ == '__main__':
@@ -39,4 +39,6 @@ if __name__ == '__main__':
                 joint_id = "g_" + g_id + "_h_" + h_id + "_k_" + str(k)
                 reduce_to_sat("g_" + g_id, "h_" + h_id, k, joint_id)
                 reduce_to_clique("g_" + g_id, "h_" + h_id, k, joint_id)
+
+
 

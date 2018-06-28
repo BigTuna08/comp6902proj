@@ -12,11 +12,18 @@ mkdir cnf/recover
 
 rm -r graphs
 mkdir graphs
-mkdir graphs/sat_sol
+#mkdir graphs/sat_sol
 mkdir graphs/edge_list
-mkdir graphs/clique_sol
+#mkdir graphs/clique_sol
 
 rm -r cliques
 mkdir cliques
 mkdir cliques/results
+
+rm -r results
+mkdir results
+mkdir results/sat_sol
+mkdir results/clique_sol
+mkdir results/clique_times
+mkdir results/sat_times
 

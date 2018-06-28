@@ -15,7 +15,7 @@ do
     echo "Running solver on $input_file"
     #echo "f_name is $f_name"
     #./clique_solver/fmc_package_v1.1/src/fmc -p $input_file > $out_file
-    ./clique_solver/pmc-master/pmc -f $input_file -k $k > $out_file
+    ./clique_solver/pmc-master/pmc -a 0 -h 0 -f $input_file -k $k > $out_file
     #rm $input_file
 done
 
