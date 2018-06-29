@@ -3,10 +3,10 @@ from reduce_to_sat import reduce_to_sat
 from reduce_to_clique import reduce_to_clique, reduce_to_clique_fast
 from time import time
 
-m_values = [1,2,4]
-alpha_values = [0.5, 2.0]
-n_values = [7,8]
-k_values = [4,5]
+m_values = [1,2,3,4,5,6]
+alpha_values = [0.5, 1.0, 1.5, 2.0] # 0.0?
+n_values = [7,8,9,10,11]
+k_values = [6,7,8,9]
 
 # m_values = [1,2,4]
 # alpha_values = [0.5, 1.0, 1.5]
