@@ -73,7 +73,8 @@ class IndManger:
 
 
 def ind_man_test():
-    n = 7
+
+    n = 3
     im = IndManger(n,n)
 
 
@@ -82,8 +83,8 @@ def ind_man_test():
             com = im.get_combo_ind(i,j)
 
             new_i, new_j = im.ind_to_combo(com)
-            # print("from ", i, j,"got", com)
-            # print("got :", new_i, new_j)
+            print("from ", i, j,"got", com)
+            print("got :", new_i, new_j)
 
             assert new_i == i
             assert new_j == j

@@ -1,6 +1,6 @@
 import sys, os
 from CliqueManager import IndManger, CliqueInfo
-from graph_tools import JointFileID
+from tool_box import JointFileID
 
 
 

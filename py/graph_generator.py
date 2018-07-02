@@ -1,6 +1,6 @@
 import sys
 import random
-from graph_tools import print_el
+from tool_box import print_el
 
 ###          Graph creation methods    ###
 
@@ -11,10 +11,14 @@ def build_graph(m0, m, n, alpha):
     for i in range(n):
         g.append(set())
 
-    #create initial cycle
-    for i in range(m0-1):
-        add_undir_edge(i, i + 1, g)
-    add_undir_edge(0, m0 - 1, g)
+    if m0 == 1:
+        m0 = 2  # ok b/c 2nd node added after initial will always connect to first node
+
+    if m0 > 1:
+        #create initial cycle
+        for i in range(m0-1):
+            add_undir_edge(i, i + 1, g)
+        add_undir_edge(0, m0 - 1, g)
 
     # add (n - m0) nodes with m edges each, accoriding to pref
     # attachement with strength alpha

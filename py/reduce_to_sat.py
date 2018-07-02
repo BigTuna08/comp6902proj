@@ -1,7 +1,7 @@
 import sys
 from SatManager import CNFVarManager
 from get_clause_count import get_clause_count
-from graph_tools import load_graph_and_info, line_prepender
+from tool_box import load_graph_and_info, line_prepender
 
 
 ###          clause making methods    ###

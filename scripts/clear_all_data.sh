@@ -12,9 +12,7 @@ mkdir cnf/recover
 
 rm -r graphs
 mkdir graphs
-#mkdir graphs/sat_sol
 mkdir graphs/edge_list
-#mkdir graphs/clique_sol
 
 rm -r cliques
 mkdir cliques

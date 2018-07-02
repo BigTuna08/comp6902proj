@@ -1,12 +1,12 @@
-import graph_tools as gt
+import tool_box as gt
 import CliqueManager as cm
+#
+f= "g_5-8-1_5_h_4-8-2_0_k_7"
 
-f= "g_1-7-0_5_h_2-7-0_5_k_4"
+# s = gt.sol_from_file(f,"s")
+# print("sol is :\n", s, "\n")
+#
+# print("valid? :\n", s.is_valid(f), "\n")
 
+cm.ind_man_test()
 
-s = gt.sol_from_file(f,"c")
-print("sol is :\n", s, "\n")
-
-print("valid? :\n", s.is_valid(f), "\n")
-
-# cm.ind_man_test()
