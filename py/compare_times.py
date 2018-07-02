@@ -218,8 +218,11 @@ class TimeResultManager:
 
 
 def print_res_matrix(m):
-    for row in m:
-        print_res_row(row)
+    if type(m[0]) is float:  # not matrix, just row
+        print_res_row(m)
+    else:
+        for row in m:
+            print_res_row(row)
 
 
 def print_res_row(row):
