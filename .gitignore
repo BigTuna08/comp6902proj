@@ -5,6 +5,7 @@
 /clique_solver/
 /results/
 /archive_data/
+/py/__py_cache__/
 **/*.rs.bk
 *.out
 
