@@ -3,6 +3,8 @@
 /cnf/
 /cliques/
 /clique_solver/
+/results/
+/archive_data/
 **/*.rs.bk
 *.out
 
