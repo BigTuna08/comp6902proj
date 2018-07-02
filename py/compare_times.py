@@ -236,16 +236,16 @@ if __name__ == '__main__':
 
         if len(sys.argv) == 3:
             if sys.argv[1] == "t":
-                res = trm.get_seperate_2_var_time_compare(sys.argv[2], sys.argv[3])
+                res = trm.get_seperate_1_var_time_compare(sys.argv[2])
             elif sys.argv[1] == "s":
-                res = trm.get_seperate_2_var_solve_compare(sys.argv[2], sys.argv[3])
+                res = trm.get_seperate_1_var_solve_compare(sys.argv[2])
             else:
                 raise "Invalid args {}".format(sys.argv)
         else: # 2 var
             if sys.argv[1] == "t":
-                res = trm.get_seperate_1_var_time_compare(sys.argv[2])
+                res = trm.get_seperate_2_var_time_compare(sys.argv[2], sys.argv[3])
             elif sys.argv[1] == "s":
-                res = trm.get_seperate_1_var_solve_compare(sys.argv[2])
+                res = trm.get_seperate_2_var_solve_compare(sys.argv[2], sys.argv[3])
             else:
                 raise "Invalid args {}".format(sys.argv)
 
@@ -258,7 +258,7 @@ if __name__ == '__main__':
 
     else:
         print('Requires args 1) t/s (time or correct)\n'
-              '2) varible 1 to compare: n, m_a, m_d, alpha_a, alpha_d or k'
+              '2) varible 1 to compare: n, m_a, m_d, alpha_a, alpha_d or k\n'
               '3) varible 2 (optional) same choices as above')
 
 
