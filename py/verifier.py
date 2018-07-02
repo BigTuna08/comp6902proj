@@ -35,8 +35,6 @@ def verify_all_cliques():
 
 
 
-
-
 def verify_clique_reduction(id):
     print("verifying clique..")
     jfi = tb.JointFileID(id)

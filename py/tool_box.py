@@ -189,27 +189,22 @@ class SolveData:
 
     def __init__(self, instance_id):
         self.clique_time =float(open("results/clique_times/"+instance_id+".out").readline().strip())
+        clique_solved = "Reject" != open("results/clique_sol/" + instance_id + ".out").readline().strip()
+        sat_solved = None
         self.sat_time = None
-        try:
+
+        try:  # for large N do clique only and no SAT
             self.sat_time = float(open("results/sat_times/" + instance_id + ".out").readline().strip())
+            sat_solved = "Reject" != open("results/sat_sol/" + instance_id + ".out").readline().strip()
         except:
             pass
 
         self.id = JointFileID(instance_id)
 
-        self.sol_exist, self.sol_agree = self.set_sol_exists(instance_id) # should only need exist
+        if sat_solved:
+            assert sat_solved == clique_solved, "If sat sovler was used, both must agree!"
 
-
-
-
-    def set_sol_exists(self, instance_id):
-        sat_solved = "Reject" != open("results/sat_sol/" + instance_id + ".out").readline().strip()
-        clique_solved = "Reject" != open("results/clique_sol/" + instance_id + ".out").readline().strip()
-
-        # print(instance_id, sat_solved, clique_solved)
-
-        # assert sat_solved == clique_solved, "Error, solvers do not agree, or error parsing files!" # trying to find error
-        return sat_solved, sat_solved == clique_solved
+        self.sol_exist = clique_solved
 
 
 
