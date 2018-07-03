@@ -7,6 +7,8 @@
 /archive_data/
 /py/__py_cache__/
 /py/__py_cache__/*
+/py/__py_cache__/**
+/py/__py_cache__/**.*
 **/*.rs.bk
 *.out
 
