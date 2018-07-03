@@ -131,10 +131,10 @@ class TimeResultManager:
             res_matirx_sat[i1][i2] += res.sat_time
             n_res[i1][i2] += 1
 
-            # print()
-            # print_adj_m(res_matirx_clique)
-            # print()
-            # print_adj_m(n_res)
+        print()
+        print_adj_m(res_matirx_clique)
+        print()
+        print_adj_m(n_res)
 
 
         for i in range(len(res_matirx_clique)):
@@ -151,13 +151,12 @@ class TimeResultManager:
 
     def get_seperate_1_var_solve_compare(self, v1):
         solvers = ["clique", "sat"]
-        two_v = self.get_seperate_2_var_time_compare(v1, v1)
+        two_v = self.get_seperate_2_var_solve_compare(v1, v1)
         results = {}
 
         for solver in solvers:
             r = two_v.get(solver)
             one_v = [r[i][i] for i in range(len(r))]
-            print("\n\nr was", r, "\n\none v", one_v, "\n\n")
             results[solver] = one_v
 
         return results
