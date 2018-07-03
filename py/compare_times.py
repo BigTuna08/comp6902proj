@@ -141,6 +141,7 @@ class TimeResultManager:
             for j in range(len(res_matirx_clique[0])):
                 if  n_res[i][j] > 0:
                     res_matirx_clique[i][j] /= n_res[i][j]  #average
+                    res_matirx_sat[i][j] /= n_res[i][j]  # average
 
         results["clique"] = res_matirx_clique
         results["sat"] = res_matirx_sat
