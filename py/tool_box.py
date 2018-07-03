@@ -210,6 +210,9 @@ class SolveData:
 
 
 
+
+
+
 class JointFileID:
 
     # eg id= g_1-12-1_5_h_4-12-1_5_k_7
@@ -244,6 +247,18 @@ class JointFileID:
 
     def alpha_ave(self):
         return (self.alpha_g - self.alpha_h)/2
+
+
+    def g_edge_count(self):
+        return self.m_g + self.n_g * self.m_g - self.m_g ** 2  # total edges in g (assuming m0 = m)
+
+    def h_edge_count(self):
+        return self.m_h + self.n_h * self.m_h - self.m_h ** 2  # total edges in g (assuming m0 = m)
+
+    def combined_edge_count(self):
+        return self.g_edge_count() + self.h_edge_count()
+
+
 
 
 # fci - float, char int (works with my filename convention)
