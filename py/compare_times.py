@@ -106,7 +106,6 @@ class TimeResultManager:
         for solver in solvers:
             r = two_v.get(solver)
             one_v = [r[i][i] for i in range(len(r))]
-            print("\n\nr was", r, "\n\none v", one_v, "\n\n")
             results[solver] = one_v
 
         return results
@@ -131,10 +130,10 @@ class TimeResultManager:
             res_matirx_sat[i1][i2] += res.sat_time
             n_res[i1][i2] += 1
 
-        print()
-        print_adj_m(res_matirx_clique)
-        print()
-        print_adj_m(n_res)
+        # print()
+        # print_adj_m(res_matirx_clique)
+        # print()
+        # print_adj_m(n_res)
 
 
         for i in range(len(res_matirx_clique)):
@@ -150,20 +149,12 @@ class TimeResultManager:
 
 
 
-    def get_seperate_1_var_solve_compare(self, v1):
-        solvers = ["clique", "sat"]
-        two_v = self.get_seperate_2_var_solve_compare(v1, v1)
-        results = {}
-
-        for solver in solvers:
-            r = two_v.get(solver)
-            one_v = [r[i][i] for i in range(len(r))]
-            results[solver] = one_v
-
-        return results
+    def get_1_var_solve_compare(self, v1):
+        two_v = self.get_2_var_solve_compare(v1, v1)
+        return [two_v[i][i] for i in range(len(two_v))]
 
 
-    def get_seperate_2_var_solve_compare(self, v1, v2):
+    def get_2_var_solve_compare(self, v1, v2):
 
         n1 = self.get_n_values(v1)
         n2 = self.get_n_values(v2)
@@ -238,41 +229,30 @@ if __name__ == '__main__':
         trm = TimeResultManager()
 
         if len(sys.argv) == 3:
-            if sys.argv[1] == "t":
-                res = trm.get_seperate_1_var_time_compare(sys.argv[2])
-            elif sys.argv[1] == "s":
-                res = trm.get_seperate_1_var_solve_compare(sys.argv[2])
-            else:
-                raise "Invalid args {}".format(sys.argv)
+            time_res = trm.get_seperate_1_var_time_compare(sys.argv[1])
+            solved_res = trm.get_1_var_solve_compare(sys.argv[1])
         else: # 2 var
-            if sys.argv[1] == "t":
-                res = trm.get_seperate_2_var_time_compare(sys.argv[2], sys.argv[3])
-            elif sys.argv[1] == "s":
-                res = trm.get_seperate_2_var_solve_compare(sys.argv[2], sys.argv[3])
-            else:
-                raise "Invalid args {}".format(sys.argv)
+            time_res = trm.get_seperate_2_var_time_compare(sys.argv[1], sys.argv[2])
+            solved_res = trm.get_2_var_solve_compare(sys.argv[1], sys.argv[2])
+
 
         print("clique result with", sys.argv[1:])
-        print_res_matrix(res.get("clique"))
-        r = res.get("sat")
+        print_res_matrix(time_res.get("clique"))
+        r = time_res.get("sat")
         if r is not None:
             print("sat result with", sys.argv[1:])
             print_res_matrix(r)
 
+        print("correct result with", sys.argv[1:])
+        print_res_matrix(time_res)
     else:
-        print('Requires args 1) t/s (time or correct)\n'
-              '2) varible 1 to compare: n, m_a, m_d, alpha_a, alpha_d or k\n'
-              '3) varible 2 (optional) same choices as above')
+        print('Requires args\n'
+              '1) varible 1 to compare: n, m_a, m_d, alpha_a, alpha_d or k\n'
+              '2) varible 2 (optional) same choices as above')
 
 
 
 
-
-# print("Sat\n")
-# print_adj_m(res.get("sat"))
-
-# print("\n\nSat\n")
-# print_adj_m(res.get("clique"))
 
 
 
