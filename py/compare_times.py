@@ -209,6 +209,7 @@ class TimeResultManager:
 
 
 def print_res_matrix(m):
+    print(m)
     if type(m[0]) is float:  # not matrix, just row
         print_res_row(m)
     else:
@@ -225,10 +226,10 @@ def print_res_row(row):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) > 2:
+    if len(sys.argv) > 1:
         trm = TimeResultManager()
 
-        if len(sys.argv) == 3:
+        if len(sys.argv) == 2:
             time_res = trm.get_seperate_1_var_time_compare(sys.argv[1])
             solved_res = trm.get_1_var_solve_compare(sys.argv[1])
         else: # 2 var
@@ -244,7 +245,7 @@ if __name__ == '__main__':
             print_res_matrix(r)
 
         print("correct result with", sys.argv[1:])
-        print_res_matrix(time_res)
+        print_res_matrix(solved_res)
     else:
         print('Requires args\n'
               '1) varible 1 to compare: n, m_a, m_d, alpha_a, alpha_d or k\n'
