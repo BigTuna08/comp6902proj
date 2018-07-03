@@ -40,7 +40,7 @@ def get_type3_clause_count(n, k, m_g_gen, m_h_gen):
     if m_h_gen < 3:
         m_h -= 1
 
-    return k*k *( n*(n-1)* (m_g + m_h) - 2*m_g*m_h )
+    return k*(k-1) *( n*(n-1)* (m_g + m_h) - 2*m_g*m_h )
 
 def get_type2_clause_count(n, k):
     return 2 * k*(k-1)*n

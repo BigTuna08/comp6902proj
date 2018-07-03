@@ -82,7 +82,7 @@ def verify_clique_reduction(id):
     print("Reduction all good for: {}".format(id))
 
 
-
-verify_all()
+if __name__ == '__main__':
+    verify_all()
 # verify_clique_reduction("g_2-8-0_5_h_1-8-0_5_k_6")
 #verify_all_cliques()

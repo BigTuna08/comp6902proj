@@ -96,40 +96,40 @@ def reduce_to_clique(g_file, h_file, k, out_id):
 
 
 #faster
-def reduce_to_clique2(g_file, h_file, k, out_id):
-
-    g, _, m_g, n_g, _ = load_graph_and_info("graphs/" + g_file)
-    h, _, m_h, n_h, _ = load_graph_and_info("graphs/" + h_file)
-
-    mnger = IndManger(n_g, n_h)
-    out_file = "cliques/" + out_id + ".mtx"
-    print("Reducing {} to clique... > {}".format(out_id, out_file))
-
-    count = 0
-    edge_strings = []
-    assert n_g == len(g), "Just checking"
-    assert n_h == len(h), "Just checking"
-    assert n_h == n_g, "Just checking"
-
-    for g_src in range(n_g):
-        for g_targ in range(g_src+1, n_g): #only upper triangle of matrix
-
-            for h_src in range(n_h):
-                for h_targ in range(h_src+1, n_h):  #only upper triangle of matrix
-
-                    if g[g_src][g_targ] == h[h_src][h_targ]:
-                        src = mnger.get_combo_ind(g_src, h_src)   # index of src_node in product graph
-                        targ = mnger.get_combo_ind(g_targ, h_targ)  # index of targ_node in product graph
-                        edge_strings.append(str(targ) + "\t" + str(src))   # add edge
-                        count += 1
-
-
-    header = "%%MatrixMarket matrix coordinate pattern symmetric\n" +\
-             str(n_g*n_h) + "\t" + str(n_g*n_h) + "\t" + str(count) + "\n"
-
-    with open(out_file, "w") as f:
-        f.write(header)
-        f.write("\n".join(edge_strings))
+# def reduce_to_clique2(g_file, h_file, k, out_id):
+#
+#     g, _, m_g, n_g, _ = load_graph_and_info("graphs/" + g_file)
+#     h, _, m_h, n_h, _ = load_graph_and_info("graphs/" + h_file)
+#
+#     mnger = IndManger(n_g, n_h)
+#     out_file = "cliques/" + out_id + ".mtx"
+#     print("Reducing {} to clique... > {}".format(out_id, out_file))
+#
+#     count = 0
+#     edge_strings = []
+#     assert n_g == len(g), "Just checking"
+#     assert n_h == len(h), "Just checking"
+#     assert n_h == n_g, "Just checking"
+#
+#     for g_src in range(n_g):
+#         for g_targ in range(g_src+1, n_g): #only upper triangle of matrix
+#
+#             for h_src in range(n_h):
+#                 for h_targ in range(h_src+1, n_h):  #only upper triangle of matrix
+#
+#                     if g[g_src][g_targ] == h[h_src][h_targ]:
+#                         src = mnger.get_combo_ind(g_src, h_src)   # index of src_node in product graph
+#                         targ = mnger.get_combo_ind(g_targ, h_targ)  # index of targ_node in product graph
+#                         edge_strings.append(str(targ) + "\t" + str(src))   # add edge
+#                         count += 1
+#
+#
+#     header = "%%MatrixMarket matrix coordinate pattern symmetric\n" +\
+#              str(n_g*n_h) + "\t" + str(n_g*n_h) + "\t" + str(count) + "\n"
+#
+#     with open(out_file, "w") as f:
+#         f.write(header)
+#         f.write("\n".join(edge_strings))
 
 
 

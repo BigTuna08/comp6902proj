@@ -3,11 +3,14 @@ import os, sys
 
 
 # assumes n_g = n_h
+# If clique and SAT solver disagree (should never happen), will throw error on __init__
 class TimeResultManager:
     def __init__(self):
-        results = {}  # dictionary with array of results for each solver (solver name is key)
-
         n_values = set()
+        m_g_values = set()
+        m_h_values = set()
+        alpha_g_values = set()
+        alpha_h_values = set()
         m_values_ave = set()
         m_values_diff = set()
         alpha_values_ave = set()
@@ -31,36 +34,120 @@ class TimeResultManager:
 
                 n_values.add(sol_data.id.n_g)
                 n_values.add(sol_data.id.n_h)
-                m_values_ave.add(sol_data.id.m_ave()) # use average m
+                m_g_values.add(sol_data.id.m_g)
+                m_h_values.add(sol_data.id.m_h)
+                alpha_g_values.add(sol_data.id.alpha_g)
+                alpha_h_values.add(sol_data.id.alpha_h)
+                m_values_ave.add(sol_data.id.m_ave())  # use average m
                 m_values_diff.add(sol_data.id.m_diff())
-                alpha_values_ave.add((sol_data.id.alpha_g+sol_data.id.alpha_h)/2)
+                alpha_values_ave.add((sol_data.id.alpha_g + sol_data.id.alpha_h) / 2)
                 alpha_values_diff.add(abs(sol_data.id.alpha_g - sol_data.id.alpha_h))
                 k_vaules.add(sol_data.id.k)
 
 
-
         self.result_list = time_results
+
 
         self.n_values = list(n_values)
         self.n_values.sort()
+        self.m_g_values = list(m_g_values)
+        self.m_g_values.sort()
+        self.m_h_values = list(m_h_values)
+        self.m_h_values.sort()
+        self.alpha_g_values = list(alpha_g_values)
+        self.alpha_g_values.sort()
+        self.alpha_h_values = list(alpha_h_values)
+        self.alpha_h_values.sort()
         self.m_values_ave = list(m_values_ave)
         self.m_values_ave.sort()
         self.m_values_diff = list(m_values_diff)
         self.m_values_diff.sort()
         self.alpha_values_ave = list(alpha_values_ave)
         self.alpha_values_ave.sort()
-        # print("\n\n\nave alpha,", alpha_values_ave, "\n\n")
         self.alpha_values_diff = list(alpha_values_diff)
         self.alpha_values_diff.sort()
-        # print("\n\n\nave alpha,", alpha_values_ave, "\n\n")
         self.k_values = list(k_vaules)
         self.k_values.sort()
+
+
+
+    def get_all_data(self, v1, v2):
+
+        n1 = self.get_n_values(v1)  # number of values for varible 1
+        n2 = self.get_n_values(v2)  # number of values for varible 2
+
+        # all n1 rows by n2 cols
+        res_matirx_clique_all = [[0] * n2 for _ in range(n1)]  # average times of clique solver on all instances
+        res_matirx_sat_all = [[0] * n2 for _ in range(n1)]   # average times of sat solver on all instances
+        res_matirx_clique_solved = [[0] * n2 for _ in range(n1)]   # average times of clique solver on solvable instances
+        res_matirx_sat_solved = [[0] * n2 for _ in range(n1)]   # average times of sat solver on solvable instances
+        res_matirx_clique_unsolved = [[0] * n2 for _ in range(n1)]   # average times of clique solver on unsolvable instances
+        res_matirx_sat_unsolved = [[0] * n2 for _ in range(n1)]   # average times of sat solver on unsolvable instances
+        res_matirx_solved = [[0] * n2 for _ in range(n1)]  #  proportion of instances solvable
+
+        n_res = [[0] * n2 for _ in range(n1)]
+
+
+        for res in self.result_list:
+            i1 = self.get_ind(v1, res)
+            i2 = self.get_ind(v2, res)
+
+            res_matirx_clique_all[i1][i2] += res.clique_time
+            res_matirx_sat_all[i1][i2] += res.sat_time
+            n_res[i1][i2] += 1
+
+            if res.sol_exist:
+                res_matirx_clique_solved[i1][i2] += res.clique_time
+                res_matirx_sat_solved[i1][i2] += res.sat_time
+                res_matirx_solved[i1][i2] += 1
+            else:
+                res_matirx_clique_unsolved[i1][i2] += res.clique_time
+                res_matirx_sat_unsolved[i1][i2] += res.sat_time
+
+
+        for i in range(len(res_matirx_clique_all)):
+            for j in range(len(res_matirx_clique_all[0])):
+
+                if res_matirx_solved[i][j] > 0:  # at least one solved
+                    res_matirx_clique_solved[i][j] /= res_matirx_solved[i][j]  # average
+                    res_matirx_sat_solved[i][j] /= res_matirx_solved[i][j]  # average
+
+                if (n_res[i][j]  - res_matirx_solved[i][j]) > 0: # at least one unsolved
+                    res_matirx_clique_unsolved[i][j] /= (n_res[i][j] - res_matirx_solved[i][j])  # average
+                    res_matirx_sat_unsolved[i][j] /= (n_res[i][j] - res_matirx_solved[i][j])  # average
+
+                if  n_res[i][j] > 0: # at least one in this category
+                    res_matirx_clique_all[i][j] /= n_res[i][j]  #average
+                    res_matirx_sat_all[i][j] /= n_res[i][j]  # average
+
+                    res_matirx_solved[i][j] /= n_res[i][j] # proportion solved
+
+
+        results = {}  # dictionary with array of results for each solver (solver name is key)
+        results["clique-all"] = res_matirx_clique_all
+        results["sat-all"] = res_matirx_sat_all
+        results["clique-solved"] = res_matirx_clique_solved
+        results["sat-solved"] = res_matirx_sat_solved
+        results["clique-un"] = res_matirx_clique_unsolved
+        results["sat-un"] = res_matirx_sat_unsolved
+        results["solved"] = res_matirx_solved
+
+
+        return results
         
         
     
     def get_n_values(self, var):
         if var == "n":
             return len(self.n_values)
+        elif var == "m_g":
+            return len(self.m_g_values)
+        elif var == "m_h":
+            return len(self.m_h_values)
+        elif var == "alpha_g":
+            return len(self.alpha_g_values)
+        elif var == "alpha_h":
+            return len(self.alpha_h_values)
         elif var == "m_a":
             return len(self.m_values_ave)
         elif var == "m_d":
@@ -73,11 +160,24 @@ class TimeResultManager:
             return len(self.k_values)
         raise "Invalid var- {}".format(var)
     
-    
+
+
     def get_ind(self, var, info):
         if var == "n":
             n1 = info.id.n_g
             return self.n_values.index(n1)
+        elif var == "m_g":
+            n1 = info.id.m_g
+            return self.m_g_values.index(n1)
+        elif var == "m_h":
+            n1 = info.id.m_h
+            return self.m_h_values.index(n1)
+        elif var == "alpha_g":
+            n1 = info.id.alpha_g
+            return self.alpha_g_values.index(n1)
+        elif var == "alpha_h":
+            n1 = info.id.alpha_h
+            return self.alpha_h_values.index(n1)
         elif var == "m_a":
             n1 = info.id.m_ave()
             return self.m_values_ave.index(n1)
@@ -154,6 +254,7 @@ class TimeResultManager:
         return [two_v[i][i] for i in range(len(two_v))]
 
 
+
     def get_2_var_solve_compare(self, v1, v2):
 
         n1 = self.get_n_values(v1)
@@ -179,7 +280,7 @@ class TimeResultManager:
 
 
 
-    def print_invalids(self):
+    def check_for_invalids(self):
         n_inval = 0
         n = len(self.result_list)
         n_solved = 0
@@ -209,7 +310,6 @@ class TimeResultManager:
 
 
 def print_res_matrix(m):
-    print(m)
     if type(m[0]) is float:  # not matrix, just row
         print_res_row(m)
     else:
@@ -226,26 +326,33 @@ def print_res_row(row):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) > 1:
+    if len(sys.argv) > 2:
         trm = TimeResultManager()
 
-        if len(sys.argv) == 2:
-            time_res = trm.get_seperate_1_var_time_compare(sys.argv[1])
-            solved_res = trm.get_1_var_solve_compare(sys.argv[1])
-        else: # 2 var
-            time_res = trm.get_seperate_2_var_time_compare(sys.argv[1], sys.argv[2])
-            solved_res = trm.get_2_var_solve_compare(sys.argv[1], sys.argv[2])
+        res = trm.get_all_data(sys.argv[1], sys.argv[2])
+
+        print("clique result- all")
+        print_res_matrix(res.get("clique-all"))
+        print("\nclique result- solved")
+        print_res_matrix(res.get("clique-solved"))
+        print("\nclique result- unsolved")
+        print_res_matrix(res.get("clique-un"))
 
 
-        print("clique result with", sys.argv[1:])
-        print_res_matrix(time_res.get("clique"))
-        r = time_res.get("sat")
-        if r is not None:
-            print("sat result with", sys.argv[1:])
-            print_res_matrix(r)
+        if res.get("sat-all") is not None:
+            print("\nsat result- all")
+            print_res_matrix(res.get("sat-all"))
+            print("\nsat result- solved")
+            print_res_matrix(res.get("sat-solved"))
+            print("\nsat result- unsolved")
+            print_res_matrix(res.get("sat-un"))
 
-        print("correct result with", sys.argv[1:])
-        print_res_matrix(solved_res)
+
+        print("\nProportion solved")
+        print_res_matrix(res.get("solved"))
+
+
+
     else:
         print('Requires args\n'
               '1) varible 1 to compare: n, m_a, m_d, alpha_a, alpha_d or k\n'
@@ -254,7 +361,25 @@ if __name__ == '__main__':
 
 
 
-
+# trm = TimeResultManager()
+#
+# if len(sys.argv) == 2:
+#     time_res = trm.get_seperate_1_var_time_compare(sys.argv[1])
+#     solved_res = trm.get_1_var_solve_compare(sys.argv[1])
+# else: # 2 var
+#     time_res = trm.get_seperate_2_var_time_compare(sys.argv[1], sys.argv[2])
+#     solved_res = trm.get_2_var_solve_compare(sys.argv[1], sys.argv[2])
+#
+#
+# print("clique result with", sys.argv[1:])
+# print_res_matrix(time_res.get("clique"))
+# r = time_res.get("sat")
+# if r is not None:
+#     print("\nsat result with", sys.argv[1:])
+#     print_res_matrix(r)
+#
+# print("\ncorrect result with", sys.argv[1:])
+# print_res_matrix(solved_res)
 
 
 

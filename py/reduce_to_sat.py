@@ -104,9 +104,8 @@ def reduce_to_sat(g_id, h_id, k, out_file):
     h, _, m_h, n_h, _ = load_graph_and_info("graphs/" + h_id)
 
     with open("cnf/" + out_file + ".cnf", "w") as out:
-        computed_clause_count = get_clause_count(n_g, k, m_g, m_h)
+        computed_clause_count = get_clause_count(n_g, k, m_g, m_h)  # can now aviod using line prepender
         mnger = CNFVarManager(g, h, k)
-        # print("p cnf", mnger.n_vars(), int(computed_clause_count), file=out)
 
         clause_count = 0
         clause_count += add_type1_clauses(mnger, out)
@@ -115,9 +114,10 @@ def reduce_to_sat(g_id, h_id, k, out_file):
 
         mnger.write_to_file("cnf/recover/" + out_file)
 
-        # assert clause_count == computed_clause_count, "Badness! " + str(clause_count) + " != " + str(
-        #     computed_clause_count)
-    line = "p cnf" + str(mnger.n_vars()) + " " + str(int(clause_count))
+        assert clause_count == computed_clause_count, "Badness! " + str(clause_count) + " != " + str(
+            computed_clause_count)
+
+    line = "p cnf " + str(mnger.n_vars()) + " " + str(int(clause_count))
     line_prepender("cnf/" + out_file + ".cnf", line)
 
 
@@ -135,75 +135,3 @@ if __name__ == '__main__':
 
 
 
-
-#
-# ###          clause making methods    ###
-#
-# def add_type1_clauses(var_mnger, out):
-#     count = 0
-#     # for G
-#     for sg_i in range(var_mnger.k): # sg_i = sub graph index
-#         clause = ""
-#         for node_i in range(var_mnger.n_g):
-#             clause += str(var_mnger.var_index('g', node_i, sg_i)) + " "
-#         clause += "0"
-#         print(clause, file=out)
-#
-#         count += 1
-#
-#     # for H
-#     for sg_i in range(var_mnger.k):
-#         clause = ""
-#         for node_i in range(var_mnger.n_h):
-#             clause += str(var_mnger.var_index('h', node_i, sg_i)) + " "
-#         clause += "0"
-#         print(clause, file=out)
-#
-#         count += 1
-#
-#     print(count, "type 1")
-#     return count
-#
-#
-# def add_type2_clauses(var_mnger, out):
-#     count = 0
-#     # for G
-#     for sg_i in range(var_mnger.k- 1):  # sg_i, sg_j = pair of sub graph indexes
-#         for sg_j in range(sg_i+ 1, var_mnger.k):
-#             for node_i in range(var_mnger.n_g):
-#                 clause = str(-var_mnger.var_index('g', node_i, sg_i)) + " " +\
-#                          str(-var_mnger.var_index('g', node_i, sg_j)) + " 0"
-#                 print(clause, file=out)
-#                 count += 1
-#
-#     # for H
-#     for sg_i in range(var_mnger.k- 1):  # sg_i, sg_j = pair of sub graph indexes
-#         for sg_j in range(sg_i+ 1, var_mnger.k):
-#             for node_i in range(var_mnger.n_h):
-#                 clause = str(-var_mnger.var_index('h', node_i, sg_i)) + " " +\
-#                          str(-var_mnger.var_index('h', node_i, sg_j)) + " 0"
-#                 print(clause, file=out)
-#                 count += 1
-#
-#     print(count, "type 2")
-#     return count
-#
-#
-# def add_type3_clauses(g, h, var_mnger, out):
-#     count = 0
-#
-#     for m in range(var_mnger.n_g-1):
-#         for n in range(m+1, var_mnger.n_g):
-#             for q in range(var_mnger.n_h - 1):
-#                 for r in range(q + 1, var_mnger.n_h):
-#                     for i in range(var_mnger.k - 1):  # sg_i, sg_j = pair of sub graph indexes
-#                         for j in range(i + 1, var_mnger.k):
-#                             if g[m][n] != h[q][r]: # edge between exactly one
-#                                 clause = str(-var_mnger.var_index('g', m, i)) + " " + \
-#                                          str(-var_mnger.var_index('g', n, j)) + " " +\
-#                                          str(-var_mnger.var_index('h', q, i)) + " " + \
-#                                          str(-var_mnger.var_index('h', r, j)) + " 0"
-#                                 count += 1
-#                                 print(clause, file=out)
-#     print(count, "type 3")
-#     return count
