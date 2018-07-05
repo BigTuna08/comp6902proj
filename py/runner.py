@@ -1,11 +1,11 @@
 from graph_generator import make_graph
 from reduce_to_sat import reduce_to_sat
 from reduce_to_clique import reduce_to_clique
-
+from tool_box import format_alpha
 
 
 m_values = [1,2,3,4]
-alpha_values = [i*.1 for i in range(5,16)] # 0.5, 0.6, ... 1.5
+alpha_values = [0.5, 1.0, 1.5]
 n_values = [6,7,8,9,10]
 k_values = [5,6,7,8,9]
 
@@ -15,7 +15,7 @@ if __name__ == '__main__':
     for n in n_values:   # create 2 graphs (g & h) for each combination of (n,alpha,m)
         for m in m_values:
             for alpha in alpha_values:
-                id = str(m) + "-" + str(n) + "-" + str(alpha).replace(".", "_")
+                id = str(m) + "-" + str(n) + "-" + format_alpha(alpha)
                 make_graph(m, m, n, alpha, "g_" + id)
                 make_graph(m, m, n, alpha, "h_" + id)
                 created_ids.append(id)

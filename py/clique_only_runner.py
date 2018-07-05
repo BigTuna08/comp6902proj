@@ -10,7 +10,7 @@ from reduce_to_clique import reduce_to_clique
 # k_values = [8, 10, 12, 14, 16]
 
 m_values = [1,2,3,4]
-alpha_values = [i*.1 for i in range(5,16)] # 0.5, 0.6, ... 1.5
+alpha_values = [0.5, 1.0, 1.5]
 n_values = [14,15,16,17,18]
 k_values = [12,13,14,15,16]
 

@@ -204,10 +204,10 @@ class JointFileID:
                                                    self.m_h, self.n_h, str(self.alpha_h).replace(".", "_"), self.k)
 
     def g_file(self):
-        return "g_{}-{}-{}".format(self.m_g, self.n_g, str(self.alpha_g).replace(".", "_"))
+        return "g_{}-{}-{}".format(self.m_g, self.n_g, format_alpha(self.alpha_g))
 
     def h_file(self):
-        return "h_{}-{}-{}".format(self.m_h, self.n_h, str(self.alpha_h).replace(".", "_"))
+        return "h_{}-{}-{}".format(self.m_h, self.n_h, format_alpha(self.alpha_h))
 
     def m_diff(self):
         return abs(self.m_g-self.m_h)
@@ -232,6 +232,9 @@ class JointFileID:
         return self.g_edge_count() + self.h_edge_count()
 
 
+
+def format_alpha(alpha):
+    return "{:.2f}".format(alpha).replace(".", "_")
 
 
 # fci - float, char int (works with my filename convention)

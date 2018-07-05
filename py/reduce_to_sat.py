@@ -114,8 +114,8 @@ def reduce_to_sat(g_id, h_id, k, out_file):
 
         mnger.write_to_file("cnf/recover/" + out_file)
 
-        assert clause_count == computed_clause_count, "Badness! " + str(clause_count) + " != " + str(
-            computed_clause_count)
+        # assert clause_count == computed_clause_count, "Badness! " + str(clause_count) + " != " + str(
+        #     computed_clause_count)
 
     line = "p cnf " + str(mnger.n_vars()) + " " + str(int(clause_count))
     line_prepender("cnf/" + out_file + ".cnf", line)
