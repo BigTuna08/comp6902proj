@@ -5,10 +5,11 @@
 /clique_solver/
 /results/
 /archive_data/
-/py/__py_cache__/
-/py/__py_cache__/*
-/py/__py_cache__/**
-/py/__py_cache__/**.*
+
+/py/__pycache__/
+/py/__pycache__/*
+/py/__pycache__/**
+/py/__pycache__/**.*
 **/*.rs.bk
 *.out
 
