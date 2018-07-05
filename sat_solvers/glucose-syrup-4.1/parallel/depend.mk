@@ -1,0 +1,149 @@
+/home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/MultiSolvers.o /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/MultiSolvers.or /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/MultiSolvers.od /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/MultiSolvers.op: \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/MultiSolvers.cc \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../parallel/MultiSolvers.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../parallel/ParallelSolver.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../core/SolverTypes.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/IntTypes.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Alg.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Vec.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/XAlloc.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Map.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Alloc.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../core/Solver.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Heap.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../utils/Options.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../utils/ParseUtils.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../core/BoundedQueue.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../core/Constants.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Clone.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../core/SolverStats.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../simp/SimpSolver.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Queue.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../parallel/SharedCompanion.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../parallel/SolverCompanion.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../parallel/ClausesBuffer.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Sort.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../utils/System.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../parallel/SolverConfiguration.h
+/home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/SharedCompanion.o /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/SharedCompanion.or /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/SharedCompanion.od /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/SharedCompanion.op: \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/SharedCompanion.cc \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../core/Solver.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Heap.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Vec.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/IntTypes.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/XAlloc.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Alg.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../utils/Options.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../utils/ParseUtils.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../core/SolverTypes.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Map.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Alloc.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../core/BoundedQueue.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../core/Constants.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Clone.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../core/SolverStats.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../parallel/ParallelSolver.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../simp/SimpSolver.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Queue.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../parallel/SharedCompanion.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../parallel/SolverCompanion.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../parallel/ClausesBuffer.h
+/home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/ClausesBuffer.o /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/ClausesBuffer.or /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/ClausesBuffer.od /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/ClausesBuffer.op: \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/ClausesBuffer.cc \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../parallel/ClausesBuffer.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Vec.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/IntTypes.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/XAlloc.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../core/SolverTypes.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Alg.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Map.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Alloc.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../core/Solver.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Heap.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../utils/Options.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../utils/ParseUtils.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../core/BoundedQueue.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../core/Constants.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Clone.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../core/SolverStats.h
+/home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/ParallelSolver.o /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/ParallelSolver.or /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/ParallelSolver.od /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/ParallelSolver.op: \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/ParallelSolver.cc \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../parallel/ParallelSolver.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../core/SolverTypes.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/IntTypes.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Alg.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Vec.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/XAlloc.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Map.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Alloc.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../core/Solver.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Heap.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../utils/Options.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../utils/ParseUtils.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../core/BoundedQueue.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../core/Constants.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Clone.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../core/SolverStats.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../simp/SimpSolver.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Queue.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../parallel/SharedCompanion.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../parallel/SolverCompanion.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../parallel/ClausesBuffer.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Sort.h
+/home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/SolverCompanion.o /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/SolverCompanion.or /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/SolverCompanion.od /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/SolverCompanion.op: \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/SolverCompanion.cc \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../parallel/SolverCompanion.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Vec.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/IntTypes.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/XAlloc.h
+/home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/SolverConfiguration.o /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/SolverConfiguration.or /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/SolverConfiguration.od /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/SolverConfiguration.op: \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/SolverConfiguration.cc \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../parallel/MultiSolvers.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../parallel/ParallelSolver.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../core/SolverTypes.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/IntTypes.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Alg.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Vec.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/XAlloc.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Map.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Alloc.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../core/Solver.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Heap.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../utils/Options.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../utils/ParseUtils.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../core/BoundedQueue.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../core/Constants.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Clone.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../core/SolverStats.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../simp/SimpSolver.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Queue.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../parallel/SharedCompanion.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../parallel/SolverCompanion.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../parallel/ClausesBuffer.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../parallel/SolverConfiguration.h
+/home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/Main.o /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/Main.or /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/Main.od /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/Main.op: \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/Main.cc \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../utils/System.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/IntTypes.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../utils/ParseUtils.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../utils/Options.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Vec.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/XAlloc.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../core/Dimacs.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../core/SolverTypes.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Alg.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Map.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Alloc.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../simp/SimpSolver.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Queue.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../core/Solver.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Heap.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../core/BoundedQueue.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../core/Constants.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../mtl/Clone.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../core/SolverStats.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../parallel/ParallelSolver.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../parallel/SharedCompanion.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../parallel/SolverCompanion.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../parallel/ClausesBuffer.h \
+ /home/kyle/Dropbox/proj6902/sat_solvers/glucose-syrup-4.1/parallel/../parallel/MultiSolvers.h

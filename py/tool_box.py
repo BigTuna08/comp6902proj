@@ -185,33 +185,6 @@ def sol_from_file(instance_id, sol_type):
 
 
 
-class SolveData:
-
-    def __init__(self, instance_id):
-        self.clique_time =float(open("results/clique_times/"+instance_id+".out").readline().strip())
-        clique_solved = "Reject" != open("results/clique_sol/" + instance_id + ".out").readline().strip()
-        sat_solved = None
-        self.sat_time = None
-
-        try:  # for large N do clique only and no SAT
-            self.sat_time = float(open("results/sat_times/" + instance_id + ".out").readline().strip())
-            sat_solved = "Reject" != open("results/sat_sol/" + instance_id + ".out").readline().strip()
-        except:
-            pass
-
-        self.id = JointFileID(instance_id)
-
-        if sat_solved:
-            assert sat_solved == clique_solved, "If sat sovler was used, both must agree!"
-
-        self.sol_exist = clique_solved
-
-
-
-
-
-
-
 
 class JointFileID:
 

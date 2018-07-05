@@ -1,18 +1,16 @@
 from graph_generator import make_graph
 from reduce_to_clique import reduce_to_clique
 
-# Good settings
 
 # m_values = [1,2,3,4,5,6]
 # alpha_values = [0.5, 1.0, 1.5, 2.0] # 0.0?
-# n_values = [8,9,10,11]  # bigger than 7 aviods heuristic solving in clique solver
-# k_values = [6,7,8,9]
+# n_values = [6,7,8,9,10]
+# k_values = [5,6,7,8,9]
 
-
-m_values = [1,2,3,]
+m_values = [1,2,3,4,5,6]
 alpha_values = [0.5, 1.0, 1.5,2.0] # 0.0?
 n_values = [10,12,14,16,18]  # bigger than 7 aviods heuristic solving in clique solver
-k_values = [7, 10, 13]
+k_values = [8, 10, 12, 14, 16]
 
 if __name__ == '__main__':
     created_ids = []

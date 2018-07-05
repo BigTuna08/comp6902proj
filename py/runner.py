@@ -14,7 +14,7 @@ from time import time
 
 m_values = [1,2,3,4,5,6]
 alpha_values = [0.5, 1.0, 1.5, 2.0] # 0.0?
-n_values = [6,7,8,9,10]  # bigger than 7 aviods heuristic solving in clique solver
+n_values = [6,7,8,9,10]
 k_values = [5,6,7,8,9]
 
 if __name__ == '__main__':
