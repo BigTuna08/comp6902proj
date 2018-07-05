@@ -19,7 +19,7 @@ k_values = [5,6,7,8,9]
 
 if __name__ == '__main__':
     created_ids = []
-    for n in n_values:
+    for n in n_values:   #create graphs
         for m in m_values:
             for alpha in alpha_values:
                 id = str(m) + "-" + str(n) + "-" + str(alpha).replace(".", "_")

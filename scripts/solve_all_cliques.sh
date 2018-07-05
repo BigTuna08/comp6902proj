@@ -13,7 +13,7 @@ do
     rm _temp_f_name
     echo "Running solver on $input_file with k= $k"
     ./clique_solver/pmc-master/pmc -a 0 -h 0 -f $input_file -k $k > $out_file
-    rm $input_file
+    #rm $input_file
 done
 
 rm _f_names

@@ -17,4 +17,8 @@ if __name__ == '__main__':
 
         plot(vals, res)
         show()
+    else:
+        print("Requires 2 args\n"
+              "1)- varible name\n"
+              "2)- result type")
 
