@@ -4,7 +4,7 @@ from os import mkdir
 if __name__ == '__main__':
 	mkdir('sat_solvers')
 	mkdir('clique_solver')
-    mkdir('archive_data')
+	mkdir('archive_data')
 
 	mkdir('cnf')
 	mkdir('cnf/assignments')

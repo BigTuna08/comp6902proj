@@ -7,7 +7,7 @@ from tool_box import format_alpha
 m_values = [1,2,3,4]
 alpha_values = [0.5, 1.0, 1.5]
 n_values = [6,7,8,9,10]
-k_values = [5,6,7,8,9]
+#k_values = [5,6,7,8,9]
 
 
 if __name__ == '__main__':
@@ -29,7 +29,7 @@ if __name__ == '__main__':
             n_h = int(parts[1])
             if n_g != n_h:  # only do for same n
                 continue
-            for k in k_values:         # create an instance with each k value
+            for k in range(n_g-5,n_g-1):         # create an instance with each k value
                 if k > n_g or k > n_h:
                     continue
                 joint_id = "g_" + g_id + "_h_" + h_id + "_k_" + str(k)
